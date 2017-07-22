@@ -1,8 +1,9 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\ButtonClick.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\WinPopUp.cs">
     <Files>
-      <File FileName="Assets\Scripts\ButtonClick.cs" Line="15" Column="1" />
+      <File FileName="Assets\Scripts\LevelController.cs" Line="17" Column="23" />
+      <File FileName="Assets\Scripts\WinPopUp.cs" Line="28" Column="2" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

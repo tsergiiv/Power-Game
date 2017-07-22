@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class ButtonClick : MonoBehaviour {
+public class LevelController : MonoBehaviour {
+
+	public int level;
 
 	public Text userInput1;
 	public Text userInput2;
@@ -14,9 +16,8 @@ public class ButtonClick : MonoBehaviour {
 	public int solution1;
 	public int solution2;
 
-	public Button hintImage;
 	public Text hints;
-	public GameObject winPopUp;
+	public Canvas winPopUp;
 	public Canvas mainCanvas;
 
 	// additional variables
@@ -27,6 +28,12 @@ public class ButtonClick : MonoBehaviour {
 	int userNum2 = 0;
 	int userSum = 0;
 	int hintUsed = 0;
+
+	public static LevelController current;
+
+	void Awake() {
+		current = this;
+	}
 
 	void Start() {
 		totalSolution = solution1 * solution1 + solution2 * solution2;
@@ -57,7 +64,7 @@ public class ButtonClick : MonoBehaviour {
 		userSum = userNum1 * userNum1 + userNum2 * userNum2;
 		if (userSum == totalSolution && userNum1 > 0 && userNum2 > 0) {
 			Debug.Log ("win");
-			//showWinPopUp ();
+			showWinPopUp ();
 		}
 	}
 
@@ -104,12 +111,12 @@ public class ButtonClick : MonoBehaviour {
 			}
 			hints.text = hintAmount.ToString ();
 		} 
+
 		checkWin ();
 	}
 
 	public void showWinPopUp() {
-		Debug.Log ("right");
-		winPopUp.transform.parent = mainCanvas.transform;
+		winPopUp.enabled = true;
 	}
 
 	// change active input field
